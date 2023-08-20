@@ -71,7 +71,7 @@ class UserServiceTest @Autowired constructor(
         val savedUser = userRepository.save(
             User("유녕진", 27)
         )
-        val request = UserUpdateRequest(savedUser.id, target)
+        val request = UserUpdateRequest(savedUser.id!!, target)
 
         // when
         userService.updateUserName(request)
@@ -93,7 +93,7 @@ class UserServiceTest @Autowired constructor(
 
         // then
         val result = userRepository.findByName(target)
-        assertThat(result).isEmpty()
+        assertThat(result).isNull()
 //        assertThat(userRepository.findAll()).isEmpty()
     }
 }

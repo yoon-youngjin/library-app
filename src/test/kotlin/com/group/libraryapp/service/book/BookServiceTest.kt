@@ -4,14 +4,12 @@ import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
-import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory
-import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository
+import com.group.libraryapp.domain.user.loadhistory.UserLoadHistory
+import com.group.libraryapp.domain.user.loadhistory.UserLoanHistoryRepository
 import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
 import com.group.libraryapp.dto.book.request.BookReturnRequest
-import java.lang.IllegalArgumentException
 import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.api.AssertionsForInterfaceTypes
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -56,7 +54,12 @@ class BookServiceTest @Autowired constructor(
         val targetBookName = "target"
         val targetName = "유녕진"
         bookRepository.save(Book(targetBookName))
-        val savedUser = userRepository.save(User(targetName, null))
+        val savedUser = userRepository.save(
+            User(
+                targetName,
+                null
+            )
+        )
         val request = BookLoanRequest(targetName, targetBookName)
 
         // when
@@ -78,7 +81,7 @@ class BookServiceTest @Autowired constructor(
         bookRepository.save(Book("test"))
         val savedUser = userRepository.save(User("유녕진", null))
         val request = BookLoanRequest("유녕진", "test")
-        userLoanHistoryRepository.save(UserLoanHistory(savedUser, "test", false))
+        userLoanHistoryRepository.save(UserLoadHistory(savedUser, "test", false))
 
         // when then
         assertThrows<IllegalArgumentException> {
@@ -94,7 +97,7 @@ class BookServiceTest @Autowired constructor(
         bookRepository.save(Book("test"))
         val savedUser = userRepository.save(User("유녕진", null))
         val request = BookReturnRequest(savedUser.name, "test")
-        userLoanHistoryRepository.save(UserLoanHistory(savedUser, "test", false))
+        userLoanHistoryRepository.save(UserLoadHistory(savedUser, "test", false))
 
         // when
         bookService.returnBook(request)
