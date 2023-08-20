@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface UserLoanHistoryRepository : JpaRepository<UserLoadHistory, Long> {
 
-    fun findByBookNameAndIsReturn(bookName: String, isReturn: Boolean): UserLoadHistory?
+    fun findByBookNameAndStatus(bookName: String, status: UserLoanStatus): UserLoadHistory?
 }
