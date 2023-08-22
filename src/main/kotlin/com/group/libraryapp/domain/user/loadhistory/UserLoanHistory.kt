@@ -8,7 +8,7 @@ import javax.persistence.Id
 import javax.persistence.ManyToOne
 
 @Entity
-class UserLoadHistory(
+class UserLoanHistory(
 
     @ManyToOne
     val user: User,
@@ -35,8 +35,8 @@ class UserLoadHistory(
             bookName: String = "test",
             status: UserLoanStatus = UserLoanStatus.LOANED,
             id: Long? = null,
-        ): UserLoadHistory {
-            return UserLoadHistory(
+        ): UserLoanHistory {
+            return UserLoanHistory(
                 user = user,
                 bookName = bookName,
                 status = status,

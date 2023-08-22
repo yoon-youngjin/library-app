@@ -1,8 +1,14 @@
 package com.group.libraryapp.domain.user.loadhistory
 
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Query
 
-interface UserLoanHistoryRepository : JpaRepository<UserLoadHistory, Long> {
+interface UserLoanHistoryRepository : JpaRepository<UserLoanHistory, Long> {
 
-    fun findByBookNameAndStatus(bookName: String, status: UserLoanStatus): UserLoadHistory?
+    fun findByBookNameAndStatus(bookName: String, status: UserLoanStatus): UserLoanHistory?
+
+    fun findAllByStatus(status: UserLoanStatus): List<UserLoanHistory>
+
+    fun countByStatus(status: UserLoanStatus): Long
+
 }
