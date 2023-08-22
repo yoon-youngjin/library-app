@@ -2,7 +2,7 @@ package com.group.libraryapp.service.user
 
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
-import com.group.libraryapp.domain.user.loadhistory.UserLoadHistory
+import com.group.libraryapp.domain.user.loadhistory.UserLoanHistory
 import com.group.libraryapp.domain.user.loadhistory.UserLoanHistoryRepository
 import com.group.libraryapp.domain.user.loadhistory.UserLoanStatus
 import com.group.libraryapp.dto.user.request.UserCreateRequest
@@ -123,9 +123,9 @@ class UserServiceTest @Autowired constructor(
         // given
         val savedUser = userRepository.save(User("A", null))
         userLoanHistoryRepository.saveAll(listOf(
-            UserLoadHistory.fixture(savedUser, "Book1", UserLoanStatus.LOANED),
-            UserLoadHistory.fixture(savedUser, "Book2", UserLoanStatus.LOANED),
-            UserLoadHistory.fixture(savedUser, "Book3", UserLoanStatus.RETURNED),
+            UserLoanHistory.fixture(savedUser, "Book1", UserLoanStatus.LOANED),
+            UserLoanHistory.fixture(savedUser, "Book2", UserLoanStatus.LOANED),
+            UserLoanHistory.fixture(savedUser, "Book3", UserLoanStatus.RETURNED),
         ))
 
         // when
