@@ -26,7 +26,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath name = createString("name");
 
-    public final ListPath<com.group.libraryapp.domain.user.loanhistory.UserLoanHistory, com.group.libraryapp.domain.user.loanhistory.QUserLoanHistory> userLoanHistories = this.<com.group.libraryapp.domain.user.loanhistory.UserLoanHistory, com.group.libraryapp.domain.user.loanhistory.QUserLoanHistory>createList("userLoanHistories", com.group.libraryapp.domain.user.loanhistory.UserLoanHistory.class, com.group.libraryapp.domain.user.loanhistory.QUserLoanHistory.class, PathInits.DIRECT2);
+    public final ListPath<com.group.libraryapp.domain.user.loadhistory.UserLoanHistory, com.group.libraryapp.domain.user.loadhistory.QUserLoanHistory> userLoanHistories = this.<com.group.libraryapp.domain.user.loadhistory.UserLoanHistory, com.group.libraryapp.domain.user.loadhistory.QUserLoanHistory>createList("userLoanHistories", com.group.libraryapp.domain.user.loadhistory.UserLoanHistory.class, com.group.libraryapp.domain.user.loadhistory.QUserLoanHistory.class, PathInits.DIRECT2);
 
     public QUser(String variable) {
         super(User.class, forVariable(variable));
