@@ -29,8 +29,10 @@ class BookController(
     @PutMapping("/book/return")
     fun returnBook(@RequestBody request: BookReturnRequest) {
 
-        
+
         bookService.returnBook(request)
+
+        
     }
 
     @GetMapping("/book/loan")
