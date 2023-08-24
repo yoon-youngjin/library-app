@@ -12,6 +12,10 @@ import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
 import com.group.libraryapp.dto.book.request.BookReturnRequest
 import com.group.libraryapp.dto.book.response.BookStatResponse
+import io.kotest.assertions.assertSoftly
+import io.kotest.assertions.throwables.shouldThrow
+import io.kotest.matchers.should
+import io.kotest.matchers.shouldBe
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
@@ -46,9 +50,11 @@ class BookServiceTest @Autowired constructor(
 
         // then
         val results = bookRepository.findAll()
-        assertThat(results).hasSize(1)
-        assertThat(results[0].name).isEqualTo("test")
-        assertThat(results[0].type).isEqualTo(BookType.COMPUTER)
+        assertSoftly(results) {
+            it.size shouldBe 1
+            it[0].name shouldBe "test"
+            it[0].type shouldBe BookType.COMPUTER
+        }
     }
 
     @Test
@@ -71,11 +77,14 @@ class BookServiceTest @Autowired constructor(
 
         // then
         val results = userLoanHistoryRepository.findAll()
-        assertThat(results).hasSize(1)
-        assertThat(results[0].bookName).isEqualTo(targetBookName)
-        assertThat(results[0].user.id).isEqualTo(savedUser.id)
-        assertThat(results[0].user.name).isEqualTo(targetName)
-        assertThat(results[0].status).isEqualTo(UserLoanStatus.LOANED)
+        assertSoftly(results) {
+            it.size shouldBe 1
+            it[0].bookName shouldBe targetBookName
+            it[0].user.id shouldBe savedUser.id
+            it[0].user.name shouldBe targetName
+            it[0].status shouldBe UserLoanStatus.LOANED
+
+        }
     }
 
     @Test
@@ -88,11 +97,9 @@ class BookServiceTest @Autowired constructor(
         userLoanHistoryRepository.save(UserLoanHistory.fixture(savedUser, "test"))
 
         // when then
-        assertThrows<IllegalArgumentException> {
+        shouldThrow<IllegalArgumentException> {
             bookService.loanBook(request)
-        }.apply {
-            assertThat(message).isEqualTo("진작 대출되어 있는 책입니다")
-        }
+        }.message shouldBe "진작 대출되어 있는 책입니다"
     }
 
     @Test
@@ -108,7 +115,9 @@ class BookServiceTest @Autowired constructor(
 
         // then
         val results = userLoanHistoryRepository.findAll()
-        assertThat(results[0].status).isEqualTo(UserLoanStatus.RETURNED)
+        assertSoftly(results) {
+            it[0].status shouldBe UserLoanStatus.RETURNED
+        }
     }
 
     @Test
@@ -128,7 +137,9 @@ class BookServiceTest @Autowired constructor(
         val result = bookService.countLoanedBook()
 
         // then
-        assertThat(result).isEqualTo(1)
+        assertSoftly(result) {
+            it shouldBe 2
+        }
     }
 
     @Test
@@ -147,10 +158,14 @@ class BookServiceTest @Autowired constructor(
         val result = bookService.getBookStatistics()
 
         // then
-        assertThat(result).hasSize(2)
-        assertCount(result, BookType.COMPUTER, 2L)
-        assertCount(result, BookType.SCIENCE, 1L)
-
+//        assertThat(result).hasSize(2)
+//        assertCount(result, BookType.COMPUTER, 2L)
+//        assertCount(result, BookType.SCIENCE, 1L)
+        assertSoftly(result) { it ->
+            it.size shouldBe 2
+            it.first { it.type == BookType.COMPUTER }.count shouldBe 2
+            it.first { it.type == BookType.SCIENCE }.count shouldBe 1
+        }
 //        val computerDto = result.first { result -> result.type == BookType.COMPUTER}
 //        assertThat(computerDto.count).isEqualTo(2)
 //
@@ -158,9 +173,9 @@ class BookServiceTest @Autowired constructor(
 //        assertThat(scienceDto.count).isEqualTo(1)
     }
 
+
     private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Long) {
         assertThat(results.first { result -> result.type == type }.count).isEqualTo(count)
     }
 
 }
-

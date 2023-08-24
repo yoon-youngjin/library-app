@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.184s</div>
+<div class="counter">0.284s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,39 +79,9 @@
 </tr>
 </thead>
 <tr>
-<td class="success">책 대여 권수를 정상 확인한다</td>
-<td class="success">countLoanedBookTest()</td>
-<td class="success">0.043s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
 <td class="success">분야별 책 권수를 정상 확인한다</td>
 <td class="success">getBookStatisticsTest()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">책이 이미 대출되어 있다면, 신규 대출이 실패한다.</td>
-<td class="success">loanBookFailTest()</td>
-<td class="success">0.011s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">책 대출이 정상 동작한다</td>
-<td class="success">loanBookTest()</td>
-<td class="success">0.091s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">책 반납이 정상 동작한다</td>
-<td class="success">returnBookTest()</td>
-<td class="success">0.024s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">책 등록이 정상 동작한다</td>
-<td class="success">saveBookTest()</td>
-<td class="success">0.006s</td>
+<td class="success">0.284s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -119,91 +89,85 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-08-23 21:06:10.971  INFO 31920 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.group.libraryapp.service.book.BookServiceTest], using SpringBootContextLoader
-2023-08-23 21:06:10.971  INFO 31920 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.group.libraryapp.service.book.BookServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2023-08-23 21:06:10.971  INFO 31920 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.group.libraryapp.service.book.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-08-23 21:06:10.979  INFO 31920 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.group.libraryapp.LibraryAppApplication for test class com.group.libraryapp.service.book.BookServiceTest
-2023-08-23 21:06:10.980  INFO 31920 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2023-08-23 21:06:10.981  INFO 31920 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@37f60cd4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4cf46574, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@779cda39, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4205d1c9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4512f5f1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a22e7e2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3bfead8d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5799b8a2, org.springframework.test.context.event.EventPublishingTestExecutionListener@5f662dd, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@38568876, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@760ac834, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6c4c32ff, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5a1a5521, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5603632c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@76685ab0]
+<pre>12:32:05.518 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:32:05.525 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:32:05.542 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.group.libraryapp.service.book.BookServiceTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+12:32:05.549 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.group.libraryapp.service.book.BookServiceTest], using SpringBootContextLoader
+12:32:05.552 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.group.libraryapp.service.book.BookServiceTest]: class path resource [com/group/libraryapp/service/book/BookServiceTest-context.xml] does not exist
+12:32:05.552 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.group.libraryapp.service.book.BookServiceTest]: class path resource [com/group/libraryapp/service/book/BookServiceTestContext.groovy] does not exist
+12:32:05.552 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.group.libraryapp.service.book.BookServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:32:05.552 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.group.libraryapp.service.book.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:32:05.575 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.group.libraryapp.service.book.BookServiceTest]
+12:32:05.610 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/dudwls143/Workspace/library-app/build/classes/kotlin/main/com/group/libraryapp/LibraryAppApplication.class]
+12:32:05.611 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.group.libraryapp.LibraryAppApplication for test class com.group.libraryapp.service.book.BookServiceTest
+12:32:05.664 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.group.libraryapp.service.book.BookServiceTest]: using defaults.
+12:32:05.664 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12:32:05.673 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@b967222, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b0ee03a, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1ba05e38, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c298dc, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3e7dfd44, org.springframework.test.context.support.DirtiesContextTestExecutionListener@723ed581, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6b760460, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@796065aa, org.springframework.test.context.event.EventPublishingTestExecutionListener@28a6301f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2c306a57, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@773e2eb5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@d8948cd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1436a7ab, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3b7b05a8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3d36dff4]
+12:32:05.675 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@14e2e1c3 testClass = BookServiceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2b4786dd testClass = BookServiceTest, locations = '{}', classes = '{class com.group.libraryapp.LibraryAppApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2617f816, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@771158fb, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3003697, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@437ebf59, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@503fbbc6, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@27216cd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.8)
+
+2023-08-24 12:32:05.905  INFO 56960 --- [    Test worker] c.g.l.service.book.BookServiceTest       : Starting BookServiceTest using Java 11.0.20 on BI-2308005-01 with PID 56960 (started by dudwls143 in /Users/dudwls143/Workspace/library-app)
+2023-08-24 12:32:05.905  INFO 56960 --- [    Test worker] c.g.l.service.book.BookServiceTest       : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-08-24 12:32:06.360  INFO 56960 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-24 12:32:06.401  INFO 56960 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2023-08-24 12:32:06.712  INFO 56960 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-24 12:32:06.744  INFO 56960 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-08-24 12:32:06.840  INFO 56960 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-24 12:32:06.902  INFO 56960 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-24 12:32:07.002  INFO 56960 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-24 12:32:07.018  INFO 56960 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: 
-    insert 
-    into
-        book
-        (id, name, type) 
-    values
-        (default, ?, ?)
+    
+    drop table if exists book CASCADE 
 Hibernate: 
-    insert 
-    into
-        user
-        (id, age, name) 
-    values
-        (default, ?, ?)
+    
+    drop table if exists user CASCADE 
 Hibernate: 
-    select
-        book0_.id as id1_0_,
-        book0_.name as name2_0_,
-        book0_.type as type3_0_ 
-    from
-        book book0_ 
-    where
-        book0_.name=?
+    
+    drop table if exists user_loan_history CASCADE 
 Hibernate: 
-    select
-        userloanhi0_.id as id1_2_,
-        userloanhi0_.book_name as book_nam2_2_,
-        userloanhi0_.status as status3_2_,
-        userloanhi0_.user_id as user_id4_2_ 
-    from
-        user_loan_history userloanhi0_ 
-    where
-        userloanhi0_.book_name=? 
-        and userloanhi0_.status=?
+    
+    create table book (
+       id bigint generated by default as identity,
+        name varchar(255),
+        type varchar(255),
+        primary key (id)
+    )
 Hibernate: 
-    select
-        user0_.id as id1_1_,
-        user0_.age as age2_1_,
-        user0_.name as name3_1_ 
-    from
-        user user0_ 
-    where
-        user0_.name=?
+    
+    create table user (
+       id bigint generated by default as identity,
+        age integer,
+        name varchar(255),
+        primary key (id)
+    )
 Hibernate: 
-    insert 
-    into
-        user_loan_history
-        (id, book_name, status, user_id) 
-    values
-        (default, ?, ?, ?)
+    
+    create table user_loan_history (
+       id bigint generated by default as identity,
+        book_name varchar(255),
+        status integer,
+        user_id bigint,
+        primary key (id)
+    )
 Hibernate: 
-    select
-        userloanhi0_.id as id1_2_,
-        userloanhi0_.book_name as book_nam2_2_,
-        userloanhi0_.status as status3_2_,
-        userloanhi0_.user_id as user_id4_2_ 
-    from
-        user_loan_history userloanhi0_
-Hibernate: 
-    select
-        user0_.id as id1_1_0_,
-        user0_.age as age2_1_0_,
-        user0_.name as name3_1_0_ 
-    from
-        user user0_ 
-    where
-        user0_.id=?
-Hibernate: 
-    delete 
-    from
-        book
-Hibernate: 
-    delete 
-    from
-        user_loan_history
-Hibernate: 
-    delete 
-    from
-        user
+    
+    alter table user_loan_history 
+       add constraint FKa17jbf1po26eytdyvyj73b4rw 
+       foreign key (user_id) 
+       references user
+2023-08-24 12:32:07.281  INFO 56960 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-24 12:32:07.285  INFO 56960 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-24 12:32:07.819  WARN 56960 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-24 12:32:07.993  INFO 56960 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:library'
+2023-08-24 12:32:08.153  INFO 56960 --- [    Test worker] c.g.l.service.book.BookServiceTest       : Started BookServiceTest in 2.457 seconds (JVM running for 5.123)
 Hibernate: 
     insert 
     into
@@ -245,221 +209,6 @@ Hibernate:
     delete 
     from
         user
-Hibernate: 
-    insert 
-    into
-        book
-        (id, name, type) 
-    values
-        (default, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user
-        (id, age, name) 
-    values
-        (default, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user_loan_history
-        (id, book_name, status, user_id) 
-    values
-        (default, ?, ?, ?)
-Hibernate: 
-    select
-        book0_.id as id1_0_,
-        book0_.name as name2_0_,
-        book0_.type as type3_0_ 
-    from
-        book book0_ 
-    where
-        book0_.name=?
-Hibernate: 
-    select
-        userloanhi0_.id as id1_2_,
-        userloanhi0_.book_name as book_nam2_2_,
-        userloanhi0_.status as status3_2_,
-        userloanhi0_.user_id as user_id4_2_ 
-    from
-        user_loan_history userloanhi0_ 
-    where
-        userloanhi0_.book_name=? 
-        and userloanhi0_.status=?
-Hibernate: 
-    select
-        user0_.id as id1_1_0_,
-        user0_.age as age2_1_0_,
-        user0_.name as name3_1_0_ 
-    from
-        user user0_ 
-    where
-        user0_.id=?
-Hibernate: 
-    delete 
-    from
-        book
-Hibernate: 
-    delete 
-    from
-        user_loan_history
-Hibernate: 
-    delete 
-    from
-        user
-Hibernate: 
-    insert 
-    into
-        book
-        (id, name, type) 
-    values
-        (default, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user
-        (id, age, name) 
-    values
-        (default, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user_loan_history
-        (id, book_name, status, user_id) 
-    values
-        (default, ?, ?, ?)
-Hibernate: 
-    select
-        user0_.id as id1_1_,
-        user0_.age as age2_1_,
-        user0_.name as name3_1_ 
-    from
-        user user0_ 
-    where
-        user0_.name=?
-Hibernate: 
-    select
-        userloanhi0_.user_id as user_id4_2_0_,
-        userloanhi0_.id as id1_2_0_,
-        userloanhi0_.id as id1_2_1_,
-        userloanhi0_.book_name as book_nam2_2_1_,
-        userloanhi0_.status as status3_2_1_,
-        userloanhi0_.user_id as user_id4_2_1_ 
-    from
-        user_loan_history userloanhi0_ 
-    where
-        userloanhi0_.user_id=?
-Hibernate: 
-    update
-        user_loan_history 
-    set
-        book_name=?,
-        status=?,
-        user_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        userloanhi0_.id as id1_2_,
-        userloanhi0_.book_name as book_nam2_2_,
-        userloanhi0_.status as status3_2_,
-        userloanhi0_.user_id as user_id4_2_ 
-    from
-        user_loan_history userloanhi0_
-Hibernate: 
-    select
-        user0_.id as id1_1_0_,
-        user0_.age as age2_1_0_,
-        user0_.name as name3_1_0_ 
-    from
-        user user0_ 
-    where
-        user0_.id=?
-Hibernate: 
-    delete 
-    from
-        book
-Hibernate: 
-    delete 
-    from
-        user_loan_history
-Hibernate: 
-    delete 
-    from
-        user
-Hibernate: 
-    insert 
-    into
-        user
-        (id, age, name) 
-    values
-        (default, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user_loan_history
-        (id, book_name, status, user_id) 
-    values
-        (default, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user_loan_history
-        (id, book_name, status, user_id) 
-    values
-        (default, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        user_loan_history
-        (id, book_name, status, user_id) 
-    values
-        (default, ?, ?, ?)
-Hibernate: 
-    select
-        count(userloanhi0_.id) as col_0_0_ 
-    from
-        user_loan_history userloanhi0_ 
-    where
-        userloanhi0_.status=?
-Hibernate: 
-    delete 
-    from
-        book
-Hibernate: 
-    delete 
-    from
-        user_loan_history
-Hibernate: 
-    delete 
-    from
-        user
-Hibernate: 
-    insert 
-    into
-        book
-        (id, name, type) 
-    values
-        (default, ?, ?)
-Hibernate: 
-    select
-        book0_.id as id1_0_,
-        book0_.name as name2_0_,
-        book0_.type as type3_0_ 
-    from
-        book book0_
-Hibernate: 
-    delete 
-    from
-        book
-Hibernate: 
-    delete 
-    from
-        user_loan_history
-Hibernate: 
-    delete 
-    from
-        user
 </pre>
 </span>
 </div>
@@ -471,7 +220,7 @@ Hibernate:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4.1</a> at 2023. 8. 23. 오후 9:06:11</p>
+<a href="http://www.gradle.org">Gradle 7.4.1</a> at 2023. 8. 24. 오후 12:32:08</p>
 </div>
 </div>
 </body>
