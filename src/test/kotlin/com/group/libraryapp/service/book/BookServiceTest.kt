@@ -1,5 +1,6 @@
 package com.group.libraryapp.service.book
 
+import com.group.libraryapp.CleaningSpringBootTest
 import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.book.BookType
@@ -12,6 +13,7 @@ import com.group.libraryapp.dto.book.request.BookLoanRequest
 import com.group.libraryapp.dto.book.request.BookRequest
 import com.group.libraryapp.dto.book.request.BookReturnRequest
 import com.group.libraryapp.dto.book.response.BookStatResponse
+import com.group.libraryapp.util.TxHelper
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
@@ -26,14 +28,15 @@ class BookServiceTest @Autowired constructor(
     private val bookRepository: BookRepository,
     private val userLoanHistoryRepository: UserLoanHistoryRepository,
     private val userRepository: UserRepository,
-) {
+    private val txHelper: TxHelper,
+) : CleaningSpringBootTest() {
 
-    @AfterEach
-    fun clean() {
-        bookRepository.deleteAllInBatch()
-        userLoanHistoryRepository.deleteAllInBatch()
-        userRepository.deleteAllInBatch()
-    }
+//    @AfterEach
+//    fun clean() {
+//        bookRepository.deleteAllInBatch()
+//        userLoanHistoryRepository.deleteAllInBatch()
+//        userRepository.deleteAllInBatch()
+//    }
 
     @Test
     @DisplayName("책 등록이 정상 동작한다")
@@ -42,7 +45,9 @@ class BookServiceTest @Autowired constructor(
         val request = BookRequest("test", BookType.COMPUTER)
 
         // when
-        bookService.saveBook(request)
+        txHelper.exec {
+            bookService.saveBook(request)
+        }
 
         // then
         val results = bookRepository.findAll()
