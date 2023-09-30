@@ -339,6 +339,7 @@ class JunitCalculatorTest {
 ### 스프링에 존재하는 여러 계층들중에 무엇을 어떻게 테스트 해야 할까?
 
 <img width="573" alt="스크린샷 2023-08-19 오전 12 06 52" src="https://github.com/yoon-youngjin/library-app/assets/83503188/d60bb9d3-cb10-460b-8b67-429d645413da">
+
 - Controller, Service, Repository 계층은 스프링 컨텍스트에 의해 관리되는 Bean
 - Domain은 순수한 자바 객체 (POJO)
 
